@@ -12,34 +12,39 @@
 </head>
 <body class="p-1 p-lg-2">
 <header style="font-size: 16px">
-    <div class="container">
-        <div class="w-lg-75 mx-2 mx-lg-auto position-relative z-2 px-lg-3 py-0 shadow-5 rounded-3 rounded-pill" style="background: #0f172a">
-            <nav class="navbar navbar-expand-lg navbar-dark p-0" id="navbar" style="min-height: 50px">
-                <div class="container px-sm-0">
-                    <a class="navbar-brand d-inline-block w-lg-64" href="#" style="font-size: 24px">
-                        <img src="{% static 'myapp/images/footprint.png' %}" class="w-auto p-2" style="max-width: 10%; max-height: 10%;" alt="logo">
-                        DemishStar
-                    </a>
-                    <div class="navbar-collapse collapse" id="navbarCollapse">
-                        <ul class="navbar-nav gap-2 mx-lg-auto">
-                            <li class="nav-item"><a class="nav-link rounded-pill text-light" href="{% url 'home' %}"
-                                                    aria-current="page">Главная</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link rounded-pill text-light"
-                                                    href="{% url 'about' %}">О питомнике</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link rounded-pill text-light" href="{% url 'create' %}"
-                                                    aria-current="page">Наши собаки</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link rounded-pill text-light" href="/pages/page-table-listing.html">Контакты</a>
-                            </li>
-                        </ul>
+    <div class="wrapper">
+        <div class="container overflow-x-hidden rounded-top-4 pt-2 pt-lg-4">
+            <div class="w-lg-75 mx-2 mx-lg-auto position-relative z-2 px-lg-3 py-0 shadow-5 rounded-3 rounded-pill" style="background: #0f172a">
+                <nav class="navbar navbar-expand-lg navbar-dark p-0" id="navbar" style="min-height: 50px">
+                    <div class="container px-sm-0">
+                        <a class="navbar-brand d-inline-block w-lg-64" href="#" style="font-size: 24px">
+                            <img src="{% static 'myapp/images/footprint.png' %}" class=" p-2" style="height: 60px; width: 60px" alt="logo">
+                            DemishStar
+                        </a>
+                        <div class="navbar-collapse collapse" id="navbarCollapse">
+                            <ul class="navbar-nav gap-2 mx-lg-auto">
+                                <li class="nav-item ">
+                                    <a class="nav-link rounded-pill Hover" href="{% url 'home' %}">Главная</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link rounded-pill Hover" href="{% url 'create' %}">Наши собаки</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link rounded-pill Hover" href="{% url 'about' %}">О питомнике</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="navbar-brand d-inline-block w-lg-64" href="#" style="font-size: 16px">
+                            <img src="{% static 'myapp/images/phone (1).png' %}" style="height: 35px; width: 35px" alt="logo">
+                            +7 902 555-66-80
+                        </a>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
-    </div>
+
 </header>
 {% block content %}{% endblock %}
+    </div>
 </body>
 </html>
