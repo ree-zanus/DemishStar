@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Страница
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="bg-light p-4 row">
+            <div class="col-3">
+                <img src="{{ el.image.url }}" class="card-img-top" alt="..." style="height: 350px">
+            </div>
+            <div class="col-8">
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.task }}</p>
+                <p>{{ item.text }}</p>
+                <a href="{% url 'order' %}" class="btn btn-dark">Выбрать друга</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

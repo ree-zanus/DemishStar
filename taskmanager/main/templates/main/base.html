@@ -17,7 +17,7 @@
             <div class="w-lg-75 mx-2 mx-lg-auto position-relative z-2 px-lg-3 py-0 shadow-5 rounded-3 rounded-pill" style="background: #0f172a">
                 <nav class="navbar navbar-expand-lg navbar-dark p-0" id="navbar" style="min-height: 50px">
                     <div class="container px-sm-0">
-                        <a class="navbar-brand d-inline-block w-lg-64" href="#" style="font-size: 24px">
+                        <a class="navbar-brand d-inline-block w-lg-64" href="{% url 'home' %}" style="font-size: 24px">
                             <img src="{% static 'myapp/images/footprint.png' %}" class=" p-2" style="height: 60px; width: 60px" alt="logo">
                             DemishStar
                         </a>
@@ -27,7 +27,7 @@
                                     <a class="nav-link rounded-pill Hover" href="{% url 'home' %}">Главная</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link rounded-pill Hover" href="{% url 'create' %}">Наши собаки</a>
+                                    <a class="nav-link rounded-pill Hover" href="{% url 'cart' %}">Наши собаки</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link rounded-pill Hover" href="{% url 'about' %}">О питомнике</a>

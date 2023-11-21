@@ -2,7 +2,8 @@
 html,body {
 	height: 100%;
 	font-family: 'Comfortaa', cursive;
-	background: linear-gradient(150deg, #faa138 50%, #f5f1eb 80%); min-height: 100vh;
+    /* background: linear-gradient(150deg, #faa138 50%, #f5f1eb 80%); min-height: 100vh; */
+    background-image: url('./images/back.jpg');
 	position: relative;
 }
 
@@ -49,4 +50,14 @@ html,body {
 
 .Box img {
     border-radius: 35px;
+}
+
+.But {
+    background: black;
+    width: 100px;
+    height: 50px
+}
+
+.box {
+    background: white;
 }

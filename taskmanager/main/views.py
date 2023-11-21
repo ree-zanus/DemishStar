@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Task
 from .forms import TaskForm
+from django.http import HttpResponse
 
 def index(request):
     tasks = Task.objects.all()
@@ -10,21 +11,16 @@ def index(request):
 def about(request):
     return render(request, 'main/about.html')
 
+def cart(request):
+    tasks = Task.objects.all()
+    return render(request, 'main/cart.html', {'tasks': tasks})
 
-def create(request):
-    error = ''
-    if request.method == 'POST':
-        form = TaskForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-        else:
-            error = 'Форма была неверной'
-
-
-    form = TaskForm()
+def cartItem(request, my_id):
+    item = Task.objects.get(id=my_id)
     context = {
-        'form': form,
-        'error': error
+        'item': item
     }
-    return render(request, 'main/create.html', context)
+    return render(request, 'main/detail.html', context=context)
+
+def order(request):
+    return render(request, 'main/order.html')

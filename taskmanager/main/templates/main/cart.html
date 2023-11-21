@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Создать таск
+{% endblock %}
+
+{% block content %}
+            <div class="container mt-3">
+                <div class="row ms-4">
+                    {% for el in tasks %}
+                    <div class="col-3 mt-5">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{ el.image.url }}" class="card-img-top" alt="..." style="height: 350px">
+                            <div class="card-body">
+                                <h6 class="card-title">{{ el.title }}</h6>
+                                <p class="card-text">{{ el.task }}</p>
+                                <a href="/cart/{{ el.id }}/" class="btn btn-dark">Выбрать друга</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+{% endblock %}
