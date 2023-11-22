@@ -6,15 +6,21 @@
 
 {% block content %}
     <div class="container mt-3">
-        <div class="bg-light p-4 row">
+        <div class="bg-dark p-4 row text-light">
             <div class="col-3">
                 <img src="{{ el.image.url }}" class="card-img-top" alt="..." style="height: 350px">
             </div>
             <div class="col-8">
-                <h4>{{ item.title }}</h4>
-                <p>{{ item.task }}</p>
-                <p>{{ item.text }}</p>
-                <a href="{% url 'order' %}" class="btn btn-dark">Выбрать друга</a>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-error">{{ form.non_field_errors }}</div>
+                    {% for f in form %}
+                        <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+                        <div class="form-error">{{ f.errors }}</div>
+                    {% endfor %}
+
+                    <p><button type="submit">Отправить</button></p>
+                </form>
             </div>
         </div>
     </div>

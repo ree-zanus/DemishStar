@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Task
-from .forms import TaskForm
+from .models import Task, Clients
+from .forms import TaskForm, AddPostForm
 from django.http import HttpResponse
 
 def index(request):
@@ -23,4 +23,19 @@ def cartItem(request, my_id):
     return render(request, 'main/detail.html', context=context)
 
 def order(request):
-    return render(request, 'main/order.html')
+    if request.method == 'POST':
+        form = AddPostForm(request.POST)
+        if form.is_valid():
+            # print(form.cleaned_data)
+            try:
+                Clients.objects.create(**form.cleaned_data)
+                return redirect('home')
+            except:
+                form.add_error(None, "Ошибка добавления поста")
+    else:
+        form = AddPostForm()
+
+    data = {
+        'form': form
+    }
+    return render(request, 'main/order.html', data)

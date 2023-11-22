@@ -13,3 +13,14 @@ class Task(models.Model):
     class Meta:
         verbose_name = 'Задача'
         verbose_name_plural = 'Задачи'
+
+
+class Clients(models.Model):
+    name = models.CharField('Имя', max_length=50)
+    SurName = models.CharField('Фамилия', max_length=50)
+    Patronymic = models.CharField('Отчество', max_length=50)
+    Number = models.CharField('Номер', max_length=50)
+
+    class Meta:
+        verbose_name = 'Клиенты'
+        verbose_name_plural = 'Клиенты'
