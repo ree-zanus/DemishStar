@@ -11,9 +11,15 @@
                 <img src="{{ item.image.url }}" class="card-img-top" alt="..." style="height: 350px">
             </div>
             <div class="col-8">
-                <h4>{{ item.title }}</h4>
-                <p>{{ item.task }}</p>
-                <p>{{ item.text }}</p>
+                <h2>Характеристики:</h2>
+                <h5>{{ item.title }}</h5>
+                <p>{{ item.NickName }}</p>
+                <p>{{ item.Father }}</p>
+                <p>{{ item.Mother }}</p>
+                <p>{{ item.Sex }}</p>
+                <p>{{ item.Color }}</p>
+                <p>{{ item.Data }}</p>
+                <p>{{ item.Text }}</p>
                 <a href="{% url 'order' %}" class="btn btn-dark">Выбрать друга</a>
             </div>
         </div>

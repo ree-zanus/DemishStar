@@ -1,14 +1,15 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block title %}
 Страница
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-3">
-        <div class="bg-dark p-4 row text-light">
+    <div class="container mt-5">
+        <div class="p-4 row text-light" style="background: #0f172a; border-radius: 40px">
             <div class="col-3">
-                <img src="{{ el.image.url }}" class="card-img-top" alt="..." style="height: 350px">
+                <img src="{% static 'myapp/images/OrderDog.jpeg' %}" class="card-img-top" alt="..." style="height: 350px">
             </div>
             <div class="col-8">
                 <form action="" method="POST">
@@ -19,7 +20,7 @@
                         <div class="form-error">{{ f.errors }}</div>
                     {% endfor %}
 
-                    <p><button type="submit">Отправить</button></p>
+                    <p><button type="submit" class="btn btn-light mt-3">Отправить</button></p>
                 </form>
             </div>
         </div>
